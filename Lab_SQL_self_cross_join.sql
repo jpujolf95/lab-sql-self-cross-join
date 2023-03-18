@@ -19,7 +19,7 @@ ON a.inventory_id = b.inventory_id and a.customer_id > b.customer_id
 INNER JOIN inventory c
 ON b.inventory_id = c.inventory_id
 GROUP BY c.film_id, a.customer_id, b.customer_id
-HAVING COUNT(*) > 2;
+HAVING COUNT(*) >= 2;
 
 
 #3 Get all possible pairs of actors and films.
