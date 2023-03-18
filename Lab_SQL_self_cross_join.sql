@@ -15,7 +15,7 @@ ON a.actor_id = d.actor_id;
 SELECT c.film_id, a.customer_id AS Customer_1, b.customer_id AS Customer_2, COUNT(*) AS Movie
 FROM rental a
 JOIN rental b
-ON a.inventory_id = b.inventory_id
+ON a.inventory_id = b.inventory_id and a.customer_id > b.customer_id
 INNER JOIN inventory c
 ON b.inventory_id = c.inventory_id
 GROUP BY c.film_id, a.customer_id, b.customer_id
